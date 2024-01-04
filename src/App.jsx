@@ -5,6 +5,7 @@ import ButtonCompo from "./components/Button";
 import CardCompo from "./components/CardCompo";
 import ModalCompo from "./components/ModalCompo";
 import NavCompo from "./components/NavCompo";
+import TabCompo from "./components/TabCompo";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <ButtonCompo />
             <CardCompo />
             <ModalCompo />
+            <TabCompo />
           </div>
         </div>
         <div className="h-[200vh]"></div>
