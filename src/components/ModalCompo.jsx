@@ -6,15 +6,39 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
+  RadioGroup,
+  Radio,
 } from "@nextui-org/react";
+
+import { useState } from "react";
 
 const ModalCompo = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [modalPlacement, setModalPlacement] = useState("auto");
 
   return (
-    <div className="flex flex-col item-center justify-center border p-5 my-10">
-      <Button onPress={onOpen}>Open Modal</Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+    <div className="flex flex-col gap-2">
+      <Button onPress={onOpen} className="max-w-fit">
+        Open Modal
+      </Button>
+      <RadioGroup
+        label="Select modal placement"
+        orientation="horizontal"
+        value={modalPlacement}
+        onValueChange={setModalPlacement}
+      >
+        <Radio value="auto">auto</Radio>
+        <Radio value="top">top</Radio>
+        <Radio value="bottom">bottom</Radio>
+        <Radio value="center">center</Radio>
+        <Radio value="top-center">top-center</Radio>
+        <Radio value="bottom-center">bottom-center</Radio>
+      </RadioGroup>
+      <Modal
+        isOpen={isOpen}
+        placement={modalPlacement}
+        onOpenChange={onOpenChange}
+      >
         <ModalContent>
           {onClose => (
             <>
@@ -31,14 +55,6 @@ const ModalCompo = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Nullam pulvinar risus non risus hendrerit venenatis.
                   Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Magna exercitation reprehenderit magna aute tempor cupidatat
-                  consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
-                  incididunt cillum quis. Velit duis sit officia eiusmod Lorem
-                  aliqua enim laboris do dolor eiusmod. Et mollit incididunt
-                  nisi consectetur esse laborum eiusmod pariatur proident Lorem
-                  eiusmod et. Culpa deserunt nostrud ad veniam.
                 </p>
               </ModalBody>
               <ModalFooter>
