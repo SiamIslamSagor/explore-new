@@ -15,6 +15,7 @@ const ButtonCompo = () => {
       <Button style={{ padding: 20, margin: 50 }} size="55px" color="primary">
         Button
       </Button>
+
       <Navbar
         style={{ display: "inline" }}
         className="avatar-nav border p-0 max-w-16"
