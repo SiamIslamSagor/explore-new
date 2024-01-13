@@ -1,22 +1,17 @@
 import { NextUIProvider } from "@nextui-org/react";
 
 import "./App.css";
-// import ButtonCompo from "./components/Button";
-// import CardCompo from "./components/CardCompo";
-// import ModalCompo from "./components/ModalCompo";
-// import NavCompo from "./components/NavCompo";
-// import TabCompo from "./components/TabCompo";
-import { useState } from "react";
+import ButtonCompo from "./components/Button";
+import CardCompo from "./components/CardCompo";
+import ModalCompo from "./components/ModalCompo";
+import NavCompo from "./components/NavCompo";
+import TabCompo from "./components/TabCompo";
+import DateTimePicker from "./components/DateTimePicker";
+// import { useState } from "react";
 
 // import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
-import {
-  GridContextProvider,
-  GridDropZone,
-  GridItem,
-  move,
-  swap,
-} from "react-grid-dnd";
+// import { move, swap } from "react-grid-dnd";
 
 /* const tasks = [
   { id: "1", content: "First task" },
@@ -84,7 +79,7 @@ import {
 
 function App() {
   // const [columns, setColumns] = useState(taskStatus);
-  const [items, setItems] = useState({
+  /* const [items, setItems] = useState({
     left: [
       { id: 1, name: "ben" },
       { id: 2, name: "joe" },
@@ -101,8 +96,8 @@ function App() {
       { id: 11, name: "pam" },
       { id: 12, name: "katie" },
     ],
-  });
-  function onChange(sourceId, sourceIndex, targetIndex, targetId) {
+  }); */
+  /* function onChange(sourceId, sourceIndex, targetIndex, targetId) {
     if (targetId) {
       const result = move(
         items[sourceId],
@@ -122,11 +117,11 @@ function App() {
       ...items,
       [sourceId]: result,
     });
-  }
+  } */
 
   return (
     <NextUIProvider>
-      {/* <div className="m-20 border-8 min-h-screen">
+      <div className="m-20 border-8 min-h-screen">
         <NavCompo />
         <h1 className="text-center font-bold text-6xl my-10">hello</h1>
         <div className="flex items-center justify-center">
@@ -135,11 +130,13 @@ function App() {
             <CardCompo />
             <ModalCompo />
             <TabCompo />
+            <hr className="my-5" />
+            <DateTimePicker />
           </div>
         </div>
         <div className="h-[200vh]"></div>
-      </div> */}
-      {/* <div>
+      </div>
+      {/*  <div>
         <h1 style={{ textAlign: "center" }}>Jira Board</h1>
         <div
           style={{ display: "flex", justifyContent: "center", height: "100%" }}
@@ -218,7 +215,7 @@ function App() {
           </DragDropContext>
         </div>
       </div> */}
-      <GridContextProvider onChange={onChange}>
+      {/* <GridContextProvider onChange={onChange}>
         <div className="dnd-container">
           <GridDropZone
             className="dropzone left"
@@ -237,7 +234,7 @@ function App() {
             ))}
           </GridDropZone>
         </div>
-      </GridContextProvider>
+      </GridContextProvider> */}
     </NextUIProvider>
   );
 }
